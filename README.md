@@ -5,20 +5,28 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+- Ruby version
 
-* System dependencies
+- System dependencies
 
-* Configuration
+- Configuration
 
-* Database creation
+- Database creation
 
-* Database initialization
+- Database initialization
 
-* How to run the test suite
+- How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+- Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+- Deployment instructions
 
-* ...
+- ...
+
+Список сущностей
+
+1. Тесты(создание, управление, выполнение)
+2. Проверка тестов(аутенфикация)
+3. Права доступа(их разграничение)
+4. Результат
+5. Соц.сеть(публикация результата в соц.сети)
