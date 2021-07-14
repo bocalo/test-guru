@@ -10,6 +10,7 @@
 class User < ApplicationRecord
   has_many :test_users
   has_many :tests, through: test_users
+  has_many :created_tests, class_name: 'Test'
 
   def test_by_level(level)
     Test.joins('JOIN test_users ON test_users.test_id = tests.id')
