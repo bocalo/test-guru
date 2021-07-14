@@ -18,6 +18,12 @@
 #  category_id  (category_id => categories.id)
 #
 class Test < ApplicationRecord
+  has_many :questions
+  has_many :test_users
+  has_many :users, through: :test_users
+  belongs_to :category
+  belongs_to :author, class_name: "User", foreign_key: 'user_id'
+
   def self.sort_tests_by_title(category_title)
     Test.joins('JOIN categories ON categories.id = tests.category_id')
        .where('categories.title = ?', category_title)
@@ -26,13 +32,3 @@ class Test < ApplicationRecord
   end
 end
 
-# Создайте метод класса в модели Test, который возвращает отсортированный по убыванию массив названий всех Тестов у которых Категория называется определённым образом (название категории передается в метод в качестве аргумента).
-
-# Test.joins('JOIN categories ON categories.id = tests.category_id')
-#        .where('categories.title = ?, category_title)
-    #    .order('tests.title DESC')
-    #    .pluck('tests.title')
-
-# Test.joins(:categories).where(categories: { title: category_title})
-    # .order(title: :desc)
-    # .pluck('tests.title')

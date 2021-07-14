@@ -18,4 +18,5 @@
 #  question_id  (question_id => questions.id)
 #
 class Answer < ApplicationRecord
+  belongs_to :question
 end
