@@ -8,6 +8,10 @@
 #  updated_at :datetime         not null
 #
 class User < ApplicationRecord
+  has_many :test_users
+  has_many :tests, through: test_users
+  has_many :created_tests, class_name: 'Test', foreign_key: :author_id
+
   def test_by_level(level)
     Test.joins('JOIN test_users ON test_users.test_id = tests.id')
         .where(test_users: { user_id: id})
