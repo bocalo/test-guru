@@ -8,9 +8,9 @@
 # migrations from scratch. Old migrations may fail to apply correctly if those
 # migrations use external dependencies or application code.
 #
-# It's strongly recommended that you check this file into your version control system!
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_12_101011) do
+ActiveRecord::Schema.define(version: 2021_07_15_052458) do
 
   create_table "answers", force: :cascade do |t|
     t.text "body", null: false
@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 2021_07_12_101011) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "category_id"
+    t.integer "author_id"
+    t.index ["author_id"], name: "index_tests_on_author_id"
     t.index ["category_id"], name: "index_tests_on_category_id"
   end
 
@@ -64,4 +66,5 @@ ActiveRecord::Schema.define(version: 2021_07_12_101011) do
   add_foreign_key "test_users", "tests"
   add_foreign_key "test_users", "users"
   add_foreign_key "tests", "categories"
+  add_foreign_key "tests", "users", column: "author_id"
 end
