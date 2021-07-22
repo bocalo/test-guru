@@ -7,7 +7,7 @@ class TestsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
   def index
-    @title = Test.all
+    @tests = Test.all
     render json: Test.all
   end
 
