@@ -1,27 +1,22 @@
 class TestsController < ApplicationController
 
   before_action :find_test, only: %i[show]
-  # after_action :send_log_message
-  # around_action :log_execute_time
+  after_action :send_log_message
+  around_action :log_execute_time
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
   def index
-    #@tests = Test.all
+    @title = Test.all
     render json: Test.all
   end
 
   def show
-    title = Test.first.title
     render inline: '<%= @test.title %>'
-    
-    #redirect_to root_path
-    # redirect_to '/'
-    # redirect_to 'https://rubyonrails.org'
   end
 
   def new
-    #@test = Test.new
+    
   end
 
   def create
@@ -29,12 +24,6 @@ class TestsController < ApplicationController
 
     render plain: test.inspect
   end
-
-  # def search
-  #   result = ["Class: #{params.class}", "Parameters: #{params.inspect}"]
-
-  #   render plain: result.join("\n")
-  # end
 
   private
 
