@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, only: %i[index new show destroy]
+  before_action :find_test, only: %i[index create]
   before_action :find_question, only: %i[show destroy]
-
+  
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
@@ -18,10 +18,12 @@ class QuestionsController < ApplicationController
   end
 
   def create
+    
     @question = @test.questions.new(question_params)
 
     if @question.save
-      render plain: Question.inspect
+      #render plain: Question.inspect
+      render plain: @question.body
     else
       render json: question.errors.full_messages, status: :unprocessable_entity
     end
