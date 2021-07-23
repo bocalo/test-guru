@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, only: %i[index create]
+  before_action :find_test, only: %i[index new create]
   before_action :find_question, only: %i[show destroy]
   
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
@@ -10,7 +10,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    
+    render plain: 'This is a question'
   end
 
   def new
@@ -31,6 +31,7 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
+    render plain: 'Question was deleted'
   end
 
   private
