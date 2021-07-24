@@ -1,6 +1,5 @@
 class TestsController < ApplicationController
 
-  before_action :find_test, only: %i[show]
   after_action :send_log_message
   around_action :log_execute_time
 
@@ -8,10 +7,11 @@ class TestsController < ApplicationController
 
   def index
     @tests = Test.all
-    render json: Test.all
+    render json: @tests
   end
 
   def show
+    @test = Test.find(params[:id])
     render inline: '<%= @test.title %>'
   end
 
@@ -22,14 +22,16 @@ class TestsController < ApplicationController
   def create
     test = Test.create(test_params)
 
+    if @question.save
+      render plain: test.title
+    else
+      render json: question.errors.full_messages, status: :unprocessable_entity
+    end
+
     render plain: test.inspect
   end
 
   private
-
-  def find_test
-    @test = Test.find(params[:id])
-  end
 
   def send_log_message
     logger.info("Action[#{action_name}] was finished")

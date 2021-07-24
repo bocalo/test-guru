@@ -18,7 +18,6 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    
     @question = @test.questions.new(question_params)
 
     if @question.save
