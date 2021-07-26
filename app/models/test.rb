@@ -25,7 +25,8 @@ class Test < ApplicationRecord
   has_many :test_users
   has_many :users, through: :test_users
   belongs_to :category
-  belongs_to :author, class_name: "User", foreign_key: 'author_id'
+  #belongs_to :author, class_name: "User", foreign_key: 'author_id'
+  belongs_to :author, optional: true
 
   validates :title, presence: true, uniqueness: true
   validates :level, numericality: { only_integer: true, greater_than: 0 }, uniqueness: { scope: :title } 
