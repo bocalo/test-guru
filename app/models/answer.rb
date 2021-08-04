@@ -19,7 +19,16 @@
 #
 class Answer < ApplicationRecord
   belongs_to :question
+
   validates :body, presence: true
+  validates :correct, presence: true
+  validate :validate_max_length, on: :create
   
   scope :correct, -> { where(correct: true) }
+
+  private
+
+  def validate_max_length
+    errors.add(:question) if question.answers.length >= 4
+  end
 end
