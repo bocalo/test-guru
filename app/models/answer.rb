@@ -23,7 +23,7 @@ class Answer < ApplicationRecord
   validates :body, presence: true
   validates :correct, presence: true
   validate :validate_max_length, on: :create
-
+  
   scope :correct, -> { where(correct: true) }
 
   private
