@@ -18,6 +18,8 @@ class User < ApplicationRecord
   has_many :created_tests, class_name: 'Test', foreign_key: :author_id
 
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP, message: 'Invalid email format' }
+  validates :password, presence: true
+  validates :password, confirmation: true
 
   has_secure_password
  
