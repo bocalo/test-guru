@@ -2,27 +2,54 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  email           :string           not null
-#  name            :string           not null
-#  password_digest :string
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
+#  id                     :integer          not null, primary key
+#  confirmation_sent_at   :datetime
+#  confirmation_token     :string
+#  confirmed_at           :datetime
+#  current_sign_in_at     :datetime
+#  current_sign_in_ip     :string
+#  email                  :string           default(""), not null
+#  encrypted_password     :string           default(""), not null
+#  first_name             :string
+#  last_name              :string
+#  last_sign_in_at        :datetime
+#  last_sign_in_ip        :string
+#  name                   :string           not null
+#  remember_created_at    :datetime
+#  reset_password_sent_at :datetime
+#  reset_password_token   :string
+#  sign_in_count          :integer          default(0), not null
+#  type                   :string           default("User"), not null
+#  unconfirmed_email      :string
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
 #
-require 'digest/sha1'
-
+# Indexes
+#
+#  index_users_on_confirmation_token    (confirmation_token) UNIQUE
+#  index_users_on_reset_password_token  (reset_password_token) UNIQUE
+#  index_users_on_type                  (type)
+#
 class User < ApplicationRecord
+# Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable,
+         :registerable,
+         :recoverable, 
+         :rememberable,
+         :trackable, 
+         :validatable,
+         :confirmable
 
-  has_many :test_passages
+  has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
   has_many :created_tests, class_name: 'Test', foreign_key: :author_id
 
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP, message: 'Invalid email format' }
+  validates :name, presence: true
   validates :password, presence: true
   validates :password, confirmation: true
 
-  has_secure_password
- 
   def test_by_level(level)
     tests.level(level)
   end
