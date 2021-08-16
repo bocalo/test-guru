@@ -1,17 +1,12 @@
-<div class="header">
-  <p>
-    <%#= link_to 'List of tests', tests_path %>
-     
-    <%#= link_to 'Create test', new_test_path %>
-  </p>
-</div>
 
 <div class="nav user">
-  <h1><%= link_to 'TestGuru', root_path %></h1>
-  <% if user_signed_in? %>
-    Welcome, <b><%= current_user.name %></b> Guru | <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+  <h1><%= link_to t('helpers.testguru'), root_path %></h1>
+  <% if user_signed_in? %><%= t('shared.header.welcome') %>,
+     <b><%= current_user.name %></b> <%= t('shared.header.guru') %> | <%= link_to t('helpers.logout'), destroy_user_session_path, method: :delete %>
   
   <% end %>
 </div>
+
+
 
  
