@@ -31,3 +31,118 @@
 
 en:
   hello: "Hello world"
+
+  helpers:
+    submit:
+      test:
+        create: "Create Test"
+        update: "Update Test"
+        new: "New test"
+        edit: "Edit"
+        new_question: "New question"
+      answer:
+        show: "Show"
+        edit: "Edit"
+        new: "New answer"
+        delete: "Delete"
+      question:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+      user:
+        create: "Create User"
+        update: "Update"
+        delete: Cancel my account
+        login: "Enter"
+
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        questions: "Questions"
+        actions: "Actions"
+        category_id: "Category"
+    page: "Back"
+    signup: "Sign up"
+    logout: "Log out"
+    delete: "Are you sure?"
+    testguru: "TestGuru"
+    result: "Tests page"
+    footer: "Learning project in the online school Thinknetica"
+    select:
+      prompt: "Select"
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+    header:
+      welcome: "Welcome"
+      guru: "Guru"
+      title: "TestGuru"
+  tests:
+    index:
+      header: "Tricky Tests"
+      title: "Title"
+      level: "Level"
+      questions: "Questions"
+      actions: "Actions"
+    test:
+      start: "Start"
+
+  test_passages:
+    result:
+      header: "The %{title} Test was Completed!"
+      score: "Score"
+    show:
+      header: "Pass the Test"
+      next: "Next"
+
+  admin:
+    answers:
+      edit:
+        header: "Edit Answer"
+      new:
+        header: "New Answer"
+      show:
+        header: "Question"
+        answer: "Answer"
+        correct: "Correct"
+    tests:
+      create:
+        success: "Test was successfully created."
+      index:
+        header: "Tricky Tests"
+      edit:
+        header: "Edit"
+      new:
+        header: "Create New Test"
+      show:
+        title: "Title"
+        level: "Level"
+        questions: "Questions"
+
+    questions:
+      question:
+        edit:
+          header: "Edit"
+        new:
+          header: "Create new question"
+        show:
+          header: "Question"
+          answers: "Answers"
+
+  tests_mailer:
+    completed_test:
+      subject: "You just completed the TestGuru test!"
+
+  layouts:
+    admin:
+      admin_title: "Admin Panel | TestGuru"
+    application:
+      header: "TestGuru"
+
+  sessions:
+    new:
+      header: "Enter the Guru Gates"

@@ -20,6 +20,10 @@ class TestPassagesController < ApplicationController
     end
   end
 
+  def result
+  
+  end
+
   private
 
   def set_test_passage

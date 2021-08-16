@@ -1,0 +1,118 @@
+ru:
+  hello: "Привет мир"
+
+  helpers:
+    test:
+      create: "Создать Тест"
+      update: "Обновить Тест"
+      new: "Новый тест"
+      new_question: "Новый вопрос"
+    answer:
+      show: "Показать"
+      edit: "Редактировать"
+      new: "Новый ответ"
+      delete: "Удалить"
+    question:
+      show: "Показать"
+      edit: "Редактировать"
+      delete: "Удалить"
+    user:
+      create: "Создать Пользователя"
+      update: "Обновить"
+      delete: "Удалить мой аккаунт"
+      login: "Войти"
+
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        questions: "Вопросы"
+        actions: "Действия"
+        category_id: "Категория"
+    page: "Назад"
+    delete: "Вы уверены?"
+    signup: "Зарегистрироваться"
+    login: "Войти"
+    logout: "Выйти"
+    testguru: "ТестГуру"
+    result: "Страница тестов"
+    footer: "Учебный проект в онлайн-школе Thinknetica"
+    select:
+      prompt: "Выберите"
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружено %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+    header:
+      welcome: "Привет"
+      guru: "Гуру"
+      title: "ТестГуру"
+
+  tests:
+    index:
+      header: "Доступные тесты"
+      title: "Название"
+      level: "Уровень"
+      questions: "Вопросы"
+      actions: "Действия"
+    test:
+      start: "Старт"
+
+  test_passages:
+    result:
+      header: "Тест %{title} успешно завершен!"
+      score: "Счет"
+    show:
+      header: "Проходи Тест"
+      next: "Следующий"
+
+  admin:
+    answers:
+      edit:
+        header: "Редактировать Ответ"
+      new:
+        header: "Новый Ответ"
+      show:
+        header: "Вопрос"
+        answer: "Ответ"
+        correct: "Правильный"
+
+    questions:
+      question:
+        edit:
+          header: "Редактировать"
+        new:
+          header: "Создать новый вопрос"
+
+    tests:
+      create:
+        success: "Тест успешно создан."
+      index:
+        header: "Доступные тесты"
+      edit:
+        header: "Редактировать"
+      new:
+        header: "Создать Новый Тест"
+        back: "Назад"
+      show:
+        header: "Вопрос"
+        answer: "Ответ"
+        correct: "Правильный"
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест на TestGuru!"
+
+  layouts:
+    admin:
+      admin_title: "Панель Администратора | ТестГуру"
+    application:
+      header: "ТестГуру"
+
+  sessions:
+    new:
+      header: "Войти в ряды Гуру"
