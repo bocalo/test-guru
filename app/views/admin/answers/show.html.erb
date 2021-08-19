@@ -1,13 +1,17 @@
-<h1><%= t('.header') %></h1>
-<p><%= @answer.question.body %></p>
-<p>
-  <b><%= t('.answer') %>:</b>
-  <%= @answer.body %>
-</p>
-<p>
-  <b><%= t('.correct') %>:</b>
-  <%= @answer.correct %>
-</p>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-4">
+    <h1><%= t('.header') %></h1>
+    <p><%= @answer.question.body %></p>
+    <p>
+      <b><%= t('.answer') %>:</b>
+      <%= @answer.body %>
+    </p>
+    <p>
+      <b><%= t('.correct') %>:</b>
+      <%= @answer.correct %>
+    </p>
 
-<%= link_to t('helpers.page.back'), admin_question_path(@answer.question) %> 
+    <%= link_to t('helpers.page'), admin_question_path(@answer.question), class: 'btn btn-outline-primary' %> 
+  </div>
+</div>
 
