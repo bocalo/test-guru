@@ -2,25 +2,19 @@ ru:
   hello: "Привет мир"
 
   helpers:
-    test:
-      create: "Создать Тест"
-      update: "Обновить Тест"
-      new: "Новый тест"
-      new_question: "Новый вопрос"
-    answer:
-      show: "Показать"
-      edit: "Редактировать"
-      new: "Новый ответ"
-      delete: "Удалить"
-    question:
-      show: "Показать"
-      edit: "Редактировать"
-      delete: "Удалить"
-    user:
-      create: "Создать Пользователя"
-      update: "Обновить"
-      delete: "Удалить мой аккаунт"
-      login: "Войти"
+    submit:
+      test:
+        create: "Создать Тест"
+        update: "Обновить Тест"
+        new: "Новый тест"
+        new_question: "Новый вопрос"
+      answer:
+        new: "Новый ответ"
+      user:
+        create: "Создать Пользователя"
+        update: "Обновить"
+        delete: "Удалить мой аккаунт"
+        login: "Войти"
 
     label:
       test:
@@ -29,8 +23,12 @@ ru:
         questions: "Вопросы"
         actions: "Действия"
         category_id: "Категория"
+
     page: "Назад"
-    delete: "Вы уверены?"
+    edit: "Редактировать"
+    show: "Показать"
+    delete: "Удалить"
+    sure: "Вы уверены?"
     signup: "Зарегистрироваться"
     login: "Войти"
     logout: "Выйти"
@@ -45,7 +43,7 @@ ru:
       header:
         few: "Обнаружено %{count} ошибки"
         many: "Обнаружено %{count} ошибок"
-        one: "Обнаружено %{count} ошибка"
+        one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
     header:
       welcome: "Привет"
@@ -61,6 +59,8 @@ ru:
       actions: "Действия"
     test:
       start: "Старт"
+    edit:
+      test: "тест"
 
   test_passages:
     result:
@@ -85,8 +85,11 @@ ru:
       question:
         edit:
           header: "Редактировать"
-        new:
-          header: "Создать новый вопрос"
+      new:
+        header: "Создать новый вопрос"
+      show:
+        header: "Вопрос"
+        answers: "Ответы"
 
     tests:
       create:
@@ -99,13 +102,13 @@ ru:
         header: "Создать Новый Тест"
         back: "Назад"
       show:
-        header: "Вопрос"
-        answer: "Ответ"
-        correct: "Правильный"
+        title: "Название"
+        level: "Уровень"
+        questions: "Вопросы"
 
   tests_mailer:
     completed_test:
-      subject: "Вы успешно завершили тест на TestGuru!"
+      subject: "Вы успешно завершили тест на ТестГуру!"
 
   layouts:
     admin:

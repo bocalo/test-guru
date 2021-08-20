@@ -1,16 +1,20 @@
-<h1><%= t('.header') %></h1>
-<p>
-  <%= link_to t('helpers.submit.test.new'), new_admin_test_path %> 
-</p>
-<table>
-  <tr>
-    <th><%= t('helpers.label.test.title') %></th>
-    <th><%= t('helpers.label.test.level') %></th>
-    <th><%= t('helpers.label.test.questions') %></th>
-    <th colspan="4"><%= t('helpers.label.test.actions') %></th>
-  </tr>
-  <%= render @tests %>
-</table>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-4">
+    <h1><%= t('.header') %></h1>
+    <p>
+      <%= link_to t('helpers.submit.test.new'), new_admin_test_path, class: 'btn btn-outline-primary' %> 
+    </p>
+    <table class="table table-bordered">
+      <tr>
+        <th><%= t('helpers.label.test.title') %></th>
+        <th><%= t('helpers.label.test.level') %></th>
+        <th><%= t('helpers.label.test.questions') %></th>
+        <th colspan="4"><%= t('helpers.label.test.actions') %></th>
+      </tr>
+      <%= render @tests %>
+    </table>
+  </div>
+</div>
 
 
 

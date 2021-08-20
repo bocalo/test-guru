@@ -1,7 +1,7 @@
 <tr>
   <td><%= question.body %></td>
-  <td><%= link_to t('helpers.submit.question.show'), admin_question_path(question) %></td>
-  <td><%= link_to t('helpers.submit.question.edit'), edit_admin_question_path(question) %></td>
+  <td><%= link_to t('helpers.show'), admin_question_path(question) %></td>
+  <td><%= link_to t('helpers.edit'), edit_admin_question_path(question) %></td>
   <td>
     <%= link_to t('helpers.submit.question.delete'),
                 admin_question_path(question),

@@ -38,17 +38,9 @@ en:
         create: "Create Test"
         update: "Update Test"
         new: "New test"
-        edit: "Edit"
         new_question: "New question"
       answer:
-        show: "Show"
-        edit: "Edit"
         new: "New answer"
-        delete: "Delete"
-      question:
-        show: "Show"
-        edit: "Edit"
-        delete: "Delete"
       user:
         create: "Create User"
         update: "Update"
@@ -62,10 +54,15 @@ en:
         questions: "Questions"
         actions: "Actions"
         category_id: "Category"
+
     page: "Back"
+    edit: "Edit"
+    show: "Show"
     signup: "Sign up"
     logout: "Log out"
-    delete: "Are you sure?"
+    login: "Log in"
+    sure: "Are you sure?"
+    delete: "Delete"
     testguru: "TestGuru"
     result: "Tests page"
     footer: "Learning project in the online school Thinknetica"
@@ -90,6 +87,8 @@ en:
       actions: "Actions"
     test:
       start: "Start"
+    edit:
+      test: "test"
 
   test_passages:
     result:
@@ -127,11 +126,11 @@ en:
       question:
         edit:
           header: "Edit"
-        new:
-          header: "Create new question"
-        show:
-          header: "Question"
-          answers: "Answers"
+      new:
+        header: "Create new question"
+      show:
+        header: "Question"
+        answers: "Answers"
 
   tests_mailer:
     completed_test:

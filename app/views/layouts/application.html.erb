@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title><%= t('.header') %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,10 +12,14 @@
   </head>
 
   <body>
-    
     <%= render 'shared/header' %>
-    <%= render 'shared/flash' %>
-    <%= yield %>
+    
+    <div class="container">
+      <%= render 'shared/flash' %>
+      <%= yield %>
+    </div>
+
     <%= render 'shared/footer' %>
+    
   </body>
 </html>

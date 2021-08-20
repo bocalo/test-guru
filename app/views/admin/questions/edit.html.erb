@@ -1,6 +1,11 @@
-<h3><%= t('.header', @question.body) %></h3>
-<h3><%= question_header(@question) %></h3>
-<%= render 'form' %>
-<p>
-  <%= link_to t('helpers.page.back'), admin_test_path(@question.test) %>
-</p>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-4">
+    <h3><%= t('.header') %>: <%= @question.body %></h3><br>
+    <h3 class="mb-3"><%= question_header(@question) %></h3>
+    <%= render 'form' %>
+    <p>
+      <%= link_to t('helpers.page'), admin_test_path(@question.test), class: 'btn btn-outline-primary' %>
+    </p>
+  </div>
+</div>
+
