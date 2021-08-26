@@ -69,6 +69,9 @@ ru:
     show:
       header: "Проходи Тест"
       next: "Следующий"
+    gist:
+      success: "Гист успешно сохранен!"
+      failure: "Во время сохранения гиста произошла ошибка"
 
   admin:
     answers:
@@ -105,6 +108,15 @@ ru:
         title: "Название"
         level: "Уровень"
         questions: "Вопросы"
+    gists:
+      index:
+        header: "Список фрагментов кода"
+        title: "Название"
+        email: "Почта"
+        gist_url: "Ссылка на страницу Гист"
+        not_found: "Гисты не найдены"
+      show:
+        show_url: "Посмотреть фрагмент кода"
 
   tests_mailer:
     completed_test:

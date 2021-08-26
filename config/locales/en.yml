@@ -97,6 +97,9 @@ en:
     show:
       header: "Pass the Test"
       next: "Next"
+    gist:
+      success: "Gist was successfully created!"
+      failure: "An error occurred while saving gist"
 
   admin:
     answers:
@@ -121,6 +124,15 @@ en:
         title: "Title"
         level: "Level"
         questions: "Questions"
+    gists:
+      index:
+        header: "Gists list"
+        title: "Title"
+        email: "Email"
+        gist_url: "Link to Gist page"
+        not_found: "Gists not found"
+      show:
+        show_url: "Show Gist Page"
 
     questions:
       question:

@@ -1,0 +1,5 @@
+en:
+  services:
+    gist_question_service:
+      text: "A question about %{title} from TestGuru"
+      file: "test-guru-question.txt"
