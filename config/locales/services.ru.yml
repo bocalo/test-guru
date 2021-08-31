@@ -1,0 +1,5 @@
+ru:
+  services:
+    gist_question_service:
+      text: "Вопрос %{title} из TestGuru"
+      file: "test-guru-question.txt"

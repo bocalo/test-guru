@@ -1,4 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-primary  <%= current_user&.admin? ? 'text-white bg-primary' : '' %>">
+
+  <ul class="navbar-nav">
+      <li class="nav-item nav-link active me-3">
+        <%= link_to 'Gists', admin_gists_path, class: 'btn btn-outline-light' %>
+      </li>
+    </ul>
+
   <div class="container">
     <%= link_to t('helpers.testguru'), current_user&.admin? ? admin_tests_path : root_path, class: current_user&.admin? ? 'navbar-brand text-white' : 'navbar-brand' %>
   </div>

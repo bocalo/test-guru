@@ -3,9 +3,9 @@
   <td><%= link_to t('helpers.show'), admin_question_path(question) %></td>
   <td><%= link_to t('helpers.edit'), edit_admin_question_path(question) %></td>
   <td>
-    <%= link_to t('helpers.submit.question.delete'),
+    <%= link_to t('helpers.delete'),
                 admin_question_path(question),
                 method: :delete,
-                data: { confirm: t('helpers.delete') } %>
+                data: { confirm: t('helpers.sure') } %>
   </td>
 </tr>
