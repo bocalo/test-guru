@@ -34,6 +34,7 @@ gem 'octokit', '~> 4.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'jquery-rails'
 gem 'bootstrap', '~> 5.1.0'
+gem 'octicons_helper'
 
 
 
