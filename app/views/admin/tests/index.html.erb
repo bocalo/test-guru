@@ -1,12 +1,13 @@
- 
-    
-    <h1><%= t('.header') %></h1>
-    <p>
-      <%= link_to t('helpers.submit.test.new'), new_admin_test_path, class: 'btn btn-outline-primary' %> 
-    </p>
+ <div class="row justify-content-center mt-3">
+   <div class="col col-md-6"> 
    
-    <table class="table">
-      <thead>
+      <h1><%= t('.header') %></h1>
+      <p>
+        <%= link_to t('helpers.submit.test.new'), new_admin_test_path, class: 'btn btn-outline-primary' %> 
+      </p>
+    
+      <table class="table table-bordered">
+        <thead>
         <tr>
           <th class="sort-by-title pointer">
             <%= t('helpers.label.test.title') %>
@@ -16,10 +17,14 @@
           <th><%= t('helpers.label.test.level') %></th>
           <th><%= t('helpers.label.test.questions') %></th>
           <th colspan="4"><%= t('helpers.label.test.actions') %></th>
-          </thead>
-      </tr>
-      <%= render @tests %>
-    </table>
+        </tr>
+        </thead>
+        <tbody>
+          <%= render @tests %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
  
 
