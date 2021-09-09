@@ -56,6 +56,7 @@ en:
         category_id: "Category"
 
     page: "Back"
+    send: "Submit"
     edit: "Edit"
     show: "Show"
     signup: "Sign up"
@@ -124,6 +125,8 @@ en:
         title: "Title"
         level: "Level"
         questions: "Questions"
+      form_inline:
+        submit: "Submit"
     gists:
       index:
         header: "Gists list"

@@ -5,6 +5,8 @@
       <p>
         <%= link_to t('helpers.submit.test.new'), new_admin_test_path, class: 'btn btn-outline-primary' %> 
       </p>
+
+      <%= render 'shared/errors', resource: @test %>
     
       <table class="table table-bordered">
         <thead>

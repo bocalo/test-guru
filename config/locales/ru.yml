@@ -25,6 +25,7 @@ ru:
         category_id: "Категория"
 
     page: "Назад"
+    send: "Отправить"
     edit: "Редактировать"
     show: "Показать"
     delete: "Удалить"
@@ -108,6 +109,8 @@ ru:
         title: "Название"
         level: "Уровень"
         questions: "Вопросы"
+      form_inline:
+        submit: "ОК"
     gists:
       index:
         header: "Список фрагментов кода"

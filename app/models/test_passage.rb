@@ -31,6 +31,14 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_question
 
+  def passed?
+    result >= SUCCESS_PERCENT
+  end
+
+  def result
+    ((self.correct_questions.to_f / test.questions.count.to_f) * 100).to_i
+  end
+
   def completed?
     current_question.nil?
   end
@@ -41,12 +49,16 @@ class TestPassage < ApplicationRecord
     save!
   end
 
-  def passed?
-    result >= SUCCESS_PERCENT
+  def current_question_index
+    test.questions.index(current_question)
   end
 
-  def result
-    ((self.correct_questions.to_f / test.questions.count.to_f) * 100).to_i
+  def current_question_number
+    current_question_index + 1
+  end
+
+  def percent_of_progress
+    (current_question_index.to_f / test.questions.count.to_f * 100).to_i
   end
 
   private
