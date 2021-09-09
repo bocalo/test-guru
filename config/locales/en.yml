@@ -126,7 +126,7 @@ en:
         level: "Level"
         questions: "Questions"
       form_inline:
-        submit: "Submit"
+        submit: "OK"
     gists:
       index:
         header: "Gists list"
