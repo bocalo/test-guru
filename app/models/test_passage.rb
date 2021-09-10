@@ -2,13 +2,13 @@
 #
 # Table name: test_passages
 #
-#  id                  :integer          not null, primary key
+#  id                  :bigint           not null, primary key
 #  correct_questions   :integer          default(0)
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
-#  current_question_id :integer
-#  test_id             :integer          not null
-#  user_id             :integer          not null
+#  current_question_id :bigint
+#  test_id             :bigint           not null
+#  user_id             :bigint           not null
 #
 # Indexes
 #
@@ -18,9 +18,9 @@
 #
 # Foreign Keys
 #
-#  current_question_id  (current_question_id => questions.id)
-#  test_id              (test_id => tests.id)
-#  user_id              (user_id => users.id)
+#  fk_rails_...  (current_question_id => questions.id)
+#  fk_rails_...  (test_id => tests.id)
+#  fk_rails_...  (user_id => users.id)
 #
 class TestPassage < ApplicationRecord
   SUCCESS_PERCENT = 85

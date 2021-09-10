@@ -2,11 +2,11 @@
 #
 # Table name: questions
 #
-#  id         :integer          not null, primary key
+#  id         :bigint           not null, primary key
 #  body       :text             not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  test_id    :integer
+#  test_id    :bigint
 #
 # Indexes
 #
@@ -14,7 +14,7 @@
 #
 # Foreign Keys
 #
-#  test_id  (test_id => tests.id)
+#  fk_rails_...  (test_id => tests.id)
 #
 class Question < ApplicationRecord
   has_many :answers, dependent: :destroy

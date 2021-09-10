@@ -6,19 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-users = User.create([
-  { name: 'Tom', email: 'tom@example.com' },
-  { name: 'Ann', email: 'ann@example.com' },
-  { name: 'Nick', email: 'nick@example.com' }
+users = User.create!([
+  { name: 'Tom', email: 'tom@example.com', first_name: 'Tom', last_name: 'Hanks', password: 'secretus' },
+  { name: 'Adamas', email: 'adamas@example.com', first_name: 'Adamas', last_name: 'Monti', password: 'secretus', type: 'Admin' }
 ])
 
-categories = Category.create([
+categories = Category.create!([
   { title: 'Frontend' },
   { title: 'Backend' },
   { title: 'Machine Learning' }
 ])
 
-tests = Test.create([
+tests = Test.create!([
   { title: 'HTML', level: 3, category_id: categories[0].id},
   { title: 'CSS', level: 2, category_id: categories[0].id},
   { title: 'JS', level: 1, category_id: categories[1].id},
@@ -26,7 +25,7 @@ tests = Test.create([
   { title: 'Java', level: 3, category_id: categories[1].id}
 ])
 
-questions = Question.create([
+questions = Question.create!([
   { body: 'What do you know about html forms?', test_id: tests[0].id },
   { body: 'What can you say about margins?', test_id: tests[1].id },
   { body: 'What do you think about php cookies?', test_id: tests[4].id },
@@ -34,7 +33,7 @@ questions = Question.create([
   { body: 'What java string methods do you know?', test_id: tests[3].id },
 ])
 
-answers = Answer.create([
+answers = Answer.create!([
   { correct: true, body: 'An HTML form is used to collect user input', question_id: questions[0].id},
   { correct: true, body: 'Margins are used to create space around elements, outside of any defined borders.', question_id: questions[1].id},
   { correct: true, body: "A cookie is a small file that the server embeds on the user's computer.", question_id: questions[4].id},
