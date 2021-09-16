@@ -1,0 +1,6 @@
+<h1>Привет! Это новый отзыв!</h1>
+
+<% user = @feedback.user %>
+<p>От: <%= "#{user.first_name} #{user.last_name} #{user.email}" %></p>
+<p>Название: <%= @feedback.title %></p>
+<p>Сообщение: <%= @feedback.body %></p>
