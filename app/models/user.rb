@@ -51,6 +51,7 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :password, presence: true
   validates :password, confirmation: true
+  #validate :params_for_sign_up
 
   def test_by_level(level)
     tests.level(level)
