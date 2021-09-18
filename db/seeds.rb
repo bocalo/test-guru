@@ -8,8 +8,7 @@
 
 users = User.create!([
   { name: 'Tom', email: 'tom@example.com', first_name: 'Tom', last_name: 'Hanks', password: 'secretus' },
-  { name: 'Adamas', email: 'adamas@example.com', first_name: 'Adamas', last_name: 'Monti', password: 'secretus', type: 'Admin' },
-  { name: 'Mikhail', email: 'm52d8c1@gmail.com', first_name: 'Mikhail', last_name: 'Moldavskiy', password: 'Qwerty123', type: 'Admin'}
+  { name: 'Adamas', email: 'adamas@example.com', first_name: 'Adamas', last_name: 'Monti', password: 'secretus', type: 'Admin' }
 ])
 
 categories = Category.create!([
