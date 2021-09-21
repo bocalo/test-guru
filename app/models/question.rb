@@ -17,9 +17,9 @@
 #  fk_rails_...  (test_id => tests.id)
 #
 class Question < ApplicationRecord
-  has_many :answers, dependent: :destroy
   belongs_to :test
-  has_many :gists
+  has_many :answers, dependent: :destroy
+  has_many :gists, dependent: :destroy
 
   validates :body, presence: true
 end
