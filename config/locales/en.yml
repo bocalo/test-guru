@@ -97,6 +97,7 @@ en:
   test_passages:
     result:
       header: "The %{title} Test was Completed!"
+      fail: "The %{title} Test was Failed!"
       score: "Score"
     show:
       header: "Pass the Test"

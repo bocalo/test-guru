@@ -69,6 +69,7 @@ ru:
   test_passages:
     result:
       header: "Тест %{title} успешно завершен!"
+      fail: "Тест %{title} провален!"
       score: "Счет"
     show:
       header: "Проходи Тест"
