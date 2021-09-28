@@ -10,11 +10,7 @@
     </p>
     <div class="mt-3">
       <strong><%= t('.questions') %>: &nbsp;</strong>
-    
-      <%#= link_to t('helpers.submit.test.new_question'), new_admin_test_question_path(@test) %>
-      
-        <%= render partial: 'questions/question', collection: @test.questions %>
-      
+      <%= render partial: 'questions/question', collection: @test.questions %>
     </div><br>
     <p><%= link_to t('helpers.submit.test.new_question'), new_admin_test_question_path(@test) %></p>
     <div class="mt-3">

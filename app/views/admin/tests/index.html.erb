@@ -6,25 +6,29 @@
         <%= link_to t('helpers.submit.test.new'), new_admin_test_path, class: 'btn btn-outline-primary' %> 
       </p>
 
-      <%= render 'shared/errors', resource: @test %>
-    
-      <table class="table table-bordered">
-        <thead>
-        <tr>
-          <th class="sort-by-title pointer">
-            <%= t('helpers.label.test.title') %>
-            <%= octicon 'arrow-up', class: 'text-success hide' %>
-            <%= octicon 'arrow-down', class: 'text-success hide' %>
-          </th>
-          <th><%= t('helpers.label.test.level') %></th>
-          <th><%= t('helpers.label.test.questions') %></th>
-          <th colspan="4"><%= t('helpers.label.test.actions') %></th>
-        </tr>
-        </thead>
-        <tbody>
-          <%= render @tests %>
-        </tbody>
-      </table>
+      <% if @tests.present? %>
+        <%= render 'shared/errors', resource: @test %>
+      
+        <table class="table table-bordered">
+          <thead>
+          <tr>
+            <th class="sort-by-title pointer">
+              <%= t('helpers.label.test.title') %>
+              <%= octicon 'arrow-up', class: 'text-success hide' %>
+              <%= octicon 'arrow-down', class: 'text-success hide' %>
+            </th>
+            <th><%= t('helpers.label.test.level') %></th>
+            <th><%= t('helpers.label.test.questions') %></th>
+            <th colspan="4"><%= t('helpers.label.test.actions') %></th>
+          </tr>
+          </thead>
+          <tbody>
+            <%= render @tests %>
+          </tbody>
+        </table>
+      <% else %>
+        <p>You have no tests in progress at this moment</p>
+      <% end %>
     </div>
   </div>
 

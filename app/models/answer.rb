@@ -21,7 +21,6 @@ class Answer < ApplicationRecord
   belongs_to :question
 
   validates :body, presence: true
-  validates :correct, presence: true
   validate :validate_max_length, on: :create
   
   scope :correct, -> { where(correct: true) }

@@ -102,6 +102,7 @@ en:
     show:
       header: "Pass the Test"
       next: "Next"
+      not_passed: "There are not questions in the test!"
     gist:
       success: "Gist was successfully created!"
       failure: "An error occurred while saving gist"
