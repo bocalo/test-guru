@@ -2,13 +2,13 @@
 #
 # Table name: categories
 #
-#  id         :integer          not null, primary key
+#  id         :bigint           not null, primary key
 #  title      :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 class Category < ApplicationRecord
-  has_many :tests
+  has_many :tests, dependent: :destroy
 
   default_scope { order(title: :asc) }
 

@@ -2,6 +2,10 @@
 <nav class="navbar navbar-light bg-light">
   <h1><%= link_to t('helpers.testguru'), root_path, class: 'navbar-brand' %></h1>
 
+  <% if user_signed_in? %>
+    <%= link_to t('.feedback'), new_feedback_path, class: 'navbar-link' %>
+  <% end %>
+
   <span class="navbar-text">
     <% if user_signed_in? %><%= t('shared.header.welcome') %>,
       <b><%= current_user.name %></b> <%= t('shared.header.guru') %> |

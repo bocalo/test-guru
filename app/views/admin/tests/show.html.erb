@@ -9,13 +9,10 @@
       <%= @test.level %>
     </p>
     <div class="mt-3">
-      <strong><%= t('.questions') %>:</strong>
-    
-      <%= link_to t('helpers.submit.test.new_question'), new_admin_test_question_path(@test) %>
-      <ol>
-        <%= render partial: 'questions/question', collection: @test.questions %>
-      </ol>
+      <strong><%= t('.questions') %>: &nbsp;</strong>
+      <%= render partial: 'questions/question', collection: @test.questions %>
     </div><br>
+    <p><%= link_to t('helpers.submit.test.new_question'), new_admin_test_question_path(@test) %></p>
     <div class="mt-3">
       <%= link_to t('helpers.edit'), edit_admin_test_path(@test), class: 'btn btn-outline-success' %> 
       <%= link_to t('helpers.page'), admin_tests_path, class: 'btn btn-outline-primary' %>

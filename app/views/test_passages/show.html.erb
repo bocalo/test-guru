@@ -1,24 +1,30 @@
+
 <div class="row justify-content-center mt-3">
   <div class="col col-md-4">
-    <h1><%= t('.header') %> <%= @test_passage.test.title %></h1>
-    <p>
-      <b><%= @test_passage.current_question.body %></b>
-    </p> 
-    <div class="progress">
-      <div class="progress-bar bg-success" id="progress-bar"  data-progress="<%= @test_passage.percent_of_progress %>" aria-valuemax="100">
-      </div>
-    </div> 
+    <% if @test_passage.test.questions.present? %>
+      <h1><%= t('.header') %> <%= @test_passage.test.title %></h1>
+      
+      <p>
+        <b><%= @test_passage.current_question.body %></b>
+      </p> 
+      <div class="progress">
+        <div class="progress-bar bg-success" id="progress-bar"  data-progress="<%= @test_passage.percent_of_progress %>" aria-valuemax="100">
+        </div>
+      </div> 
 
-    <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
-      <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
-        <p>
-          <%= b.check_box id: "answer_ids_#{b.object_id}" %>
-          <%= b.label %>
-        </p>
+      <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
+        <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
+          <p>
+            <%= b.check_box id: "answer_ids_#{b.object_id}" %>
+            <%= b.label %>
+          </p>
+        <% end %>
+
+        <p><%= link_to "Gist Question", gist_test_passage_path(@test_passage), method: :post %></p>
+        <p><%= form.submit t('.next'), class: 'btn btn-primary' %></p>
       <% end %>
-
-      <p><%= link_to "Gist Question", gist_test_passage_path(@test_passage), method: :post %></p>
-      <p><%= form.submit t('.next'), class: 'btn btn-primary' %></p>
+    <% else %>
+      <h1><%= t('.not_passed') %></h1>
     <% end %>
   </div>
 </div>

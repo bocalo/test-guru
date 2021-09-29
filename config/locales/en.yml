@@ -46,6 +46,8 @@ en:
         update: "Update"
         delete: Cancel my account
         login: "Enter"
+      feedback:
+        create: "Send"
 
     label:
       test:
@@ -79,6 +81,7 @@ en:
       welcome: "Welcome"
       guru: "Guru"
       title: "TestGuru"
+      feedback: "Feedback"
   tests:
     index:
       header: "Tricky Tests"
@@ -94,13 +97,22 @@ en:
   test_passages:
     result:
       header: "The %{title} Test was Completed!"
+      fail: "The %{title} Test was Failed!"
       score: "Score"
     show:
       header: "Pass the Test"
       next: "Next"
+      not_passed: "There are not questions in the test!"
     gist:
       success: "Gist was successfully created!"
       failure: "An error occurred while saving gist"
+
+  feedbacks:
+    new:
+      header: "Send feedback"
+    create:
+      success: "Message has been sent successfully"
+      failure: "Could not send message"
 
   admin:
     answers:

@@ -15,6 +15,8 @@ ru:
         update: "Обновить"
         delete: "Удалить мой аккаунт"
         login: "Войти"
+      feedback:
+        create: "Отправить"
 
     label:
       test:
@@ -50,6 +52,7 @@ ru:
       welcome: "Привет"
       guru: "Гуру"
       title: "ТестГуру"
+      feedback: "Отзыв"
 
   tests:
     index:
@@ -66,13 +69,22 @@ ru:
   test_passages:
     result:
       header: "Тест %{title} успешно завершен!"
+      fail: "Тест %{title} провален!"
       score: "Счет"
     show:
       header: "Проходи Тест"
       next: "Следующий"
+      not_passed: "В тесте нет вопросов!"
     gist:
       success: "Гист успешно сохранен!"
       failure: "Во время сохранения гиста произошла ошибка"
+
+  feedbacks:
+    new:
+      header: "Отправить отзыв"
+    create:
+      success: "Сообщение успешно отправлено"
+      failure: "Не удалось отправить сообщение"
 
   admin:
     answers:
