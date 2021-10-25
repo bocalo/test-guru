@@ -1,0 +1,21 @@
+<h3>Hi!</h3>
+<div class="row justify-content-center mt-5">
+  <div class="col col-md-4">
+<div class="mb-3">
+  <div class="mb-3">
+    <strong><%= 'Title' %>:</strong> <%= @badge.title %>
+  </div>
+  <div class="mb-3">
+    <strong><%= 'Badge type' %>:</strong> <%= @badge.badge_type %>
+  </div>
+  <div class="mb-3">
+    <strong><%= 'Badge value' %>:</strong> <%= @badge.badge_value %>
+  </div>
+  <div class="mb-3">
+    <strong><%= 'Image' %>:</strong> <%= @badge.image_url %>
+  </div>
+</div>
+
+<%= link_to 'Back', admin_badges_path, class: 'link-primary' %> | <%= link_to 'Edit', edit_admin_badge_path(@badge) %>
+</div>
+</div>

@@ -4,6 +4,7 @@
 #
 #  id                  :bigint           not null, primary key
 #  correct_questions   :integer          default(0)
+#  passed              :boolean          default(FALSE), not null
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #  current_question_id :bigint
@@ -30,6 +31,7 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_validation :before_validation_set_question
+  before_update :set_passed
 
   def passed?
     result >= SUCCESS_PERCENT
@@ -52,7 +54,7 @@ class TestPassage < ApplicationRecord
   end
 
   def current_question_index
-    test.questions.index(current_question)
+    test.questions.index(current_question) 
   end
 
   def current_question_number
@@ -79,5 +81,9 @@ class TestPassage < ApplicationRecord
 
   def next_question
     test.questions.order(:id).where('id > ?', current_question.id).first
+  end
+
+  def set_passed
+    self.passed = passed? if completed?
   end
 end

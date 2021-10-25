@@ -132,6 +132,9 @@ ru:
         not_found: "Гисты не найдены"
       show:
         show_url: "Посмотреть фрагмент кода"
+    badges:
+      new:
+        new_badge: "Новый знак"
 
   tests_mailer:
     completed_test:

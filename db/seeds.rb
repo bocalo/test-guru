@@ -41,3 +41,24 @@ answers = Answer.create!([
   { correct: true, body: 'This is a difficult question.', question_id: questions[2].id},
   { correct: true, body: 'I know methods as length(), concat() and charAt().', question_id: questions[3].id }
 ])
+
+Badge.create([
+  {
+    title: 'all_tests_at_category Frontend',
+    badge_type: 'all_tests_at_category',
+    badge_value: categories[0].title,
+    image_url: 'star'
+  },
+  {
+    title: 'passed_test_at_first_attempt',
+    badge_type: 'passed_test_at_first_attempt',
+    badge_value: 'passed_test_at_first_attempt',
+    image_url: 'star-fill'
+  },
+  {
+    title: 'all_tests_at_level 1',
+    badge_type: 'all_tests_at_level',
+    badge_value: 1,
+    image_url: 'rocket'
+  }
+])
