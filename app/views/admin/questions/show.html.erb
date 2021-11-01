@@ -17,5 +17,6 @@
 
     <%= link_to t('helpers.edit'), edit_admin_question_path(@question), class: 'btn btn-primary' %> 
     <%= link_to t('helpers.page'), admin_test_path(@question.test), class: 'btn btn-success' %> 
+    <%#= link_to t('helpers.delete'), admin_question_path(@question), method: :delete, data: { confirm: "Are you sure?"}, class: 'btn btn-warning' %> 
   </div>
 </div>

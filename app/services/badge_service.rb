@@ -1,3 +1,4 @@
+
 class BadgeService
 
   def initialize(test_passage)
@@ -6,27 +7,23 @@ class BadgeService
   end
 
   def call
-   @Badge.all.each { |badge| create_badge(badge) if self.send(badge.badge_type, badge_value) }
+    Badge.all.each do |badge|
+      create_badge(badge) if send(badge.badge_type, badge.badge_value)
+    end
   end
 
  private
 
-  # def call
-  #   Badge.all.each do |badge|
-  #     create_badge(badge) if send("#{badge.badge_type, badge_value}") && !UserBadge.find_by(user_id: @user.id, badge_id: badge.id)
-  #   end
-  # end
-
   def create_badge(badge)
-    @user_badge = UserBadge.new(test_id: @test_passage.test.id, user_id: @user.id, badge_id: badge.id)
+    @user_badge = UserBadge.new(user_id: @user.id, badge_id: badge.id)
 
     errors.add(:badges, :invalid) unless @user_badge.save
   end
 
   def all_tests_at_category(category_title)
     return false if @test_passage.test.category.title != category_title
-
-    @test_passage.passed? && @user.tests.sort_by_category_title(category_title).uniq.count == Test.sort_by_category_title(category_title).count
+    
+    @test_passage.passed && @user.tests.sort_by_category_title(category_title).uniq.count == Test.sort_by_category_title(category_title).count
   end
 
   def passed_test_at_first_attempt(*args)
@@ -34,9 +31,13 @@ class BadgeService
   end
 
   def all_tests_at_level(level)
+    
     return false if level.to_i != @test_passage.test.level
     tests = Test.where(level: level).pluck(:id)
     completed = @test_passage.user.test_passages.where(passed: true, test: tests).pluck(:test_id).uniq
     tests.count == completed.count
   end
 end
+
+
+
