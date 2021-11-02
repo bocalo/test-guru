@@ -4,6 +4,8 @@
 
   <% if user_signed_in? %>
     <%= link_to t('.feedback'), new_feedback_path, class: 'navbar-link' %>
+    <%#= link_to 'Badges', badges_path, class: 'badge bg-dark text-light' %>
+    <%= link_to 'Badges', badges_path, class: 'btn btn-outline-primary' %>
   <% end %>
 
   <span class="navbar-text">

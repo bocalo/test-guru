@@ -4,6 +4,7 @@
 #
 #  id                  :bigint           not null, primary key
 #  correct_questions   :integer          default(0)
+#  passed              :boolean          default(FALSE), not null
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #  current_question_id :bigint

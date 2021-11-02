@@ -158,6 +158,9 @@ en:
       show:
         header: "Question"
         answers: "Answers"
+    badges:
+      new:
+        new_badge: "New badge"
 
   tests_mailer:
     completed_test:
