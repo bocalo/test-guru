@@ -8,8 +8,8 @@ class TestPassagesController < ApplicationController
 
   def update
     @test_passage.accept!(params[:answer_ids])
-    
-    if @test_passage.completed?
+
+    if @test_passage.completed? || @test_passage.time_left?
       TestsMailer.completed_test(@test_passage).deliver_now
 
       BadgeService.new(@test_passage).call if @test_passage.passed?

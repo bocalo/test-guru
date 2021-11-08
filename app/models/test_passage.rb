@@ -42,7 +42,7 @@ class TestPassage < ApplicationRecord
   end
 
   def completed?
-    current_question.nil?
+    current_question.nil? 
   end
 
   def accept!(answer_ids)
@@ -63,6 +63,14 @@ class TestPassage < ApplicationRecord
 
   def percent_of_progress
     (current_question_index.to_f / test.questions.count.to_f * 100).to_i
+  end
+
+  def time_left
+    self.test.timer - (Time.current - self.created_at).seconds if self.test.timer > 0
+  end
+
+  def time_left?
+    time_left <= 0
   end
 
   private

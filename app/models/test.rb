@@ -4,6 +4,7 @@
 #
 #  id          :bigint           not null, primary key
 #  level       :integer          default(1), not null
+#  timer       :integer
 #  title       :string           not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
@@ -31,6 +32,7 @@ class Test < ApplicationRecord
   
   validates :title, presence: true, uniqueness: true
   validates :level, numericality: { only_integer: true, greater_than: 0 }, uniqueness: { scope: :title } 
+  validates :timer, numericality: { only_integer: true, greater_than: 0 }
 
   scope :level, -> (level) { where(level: level) }
   scope :easy, -> { level(0..1) }
@@ -40,6 +42,10 @@ class Test < ApplicationRecord
   
   def self.sort_tests_by_title(category_title)
     Test.sort_by_category_title(category_title).order(title: :desc).pluck(:title)
+  end
+
+  def has_timer?
+    self.timer > 0
   end
 end
 
