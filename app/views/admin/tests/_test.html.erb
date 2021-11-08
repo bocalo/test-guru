@@ -1,3 +1,4 @@
+<h1>Hi!</h1>
 <tr>
   <td class="align-middle">
     <%= content_tag :span, test.title, class: 'test-title', data: { test_id: test.id } %>
@@ -5,6 +6,7 @@
   </td>
   <td class="align-middle"><%= test_level(test) %></td>
   <td class="align-middle"><%= test.questions.count %></td>
+  <td class="align-middle"><%= test.timer %></td>
   <td class="align-middle">
     <%= link_to t('helpers.show'), admin_test_path(test) %>
   </td>

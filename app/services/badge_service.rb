@@ -21,7 +21,7 @@ class BadgeService
   end
 
   def all_tests_at_category(category_title)
-   return false if @test_passage.test.category.title != category_title
+    return false if @test_passage.test.category.title != category_title
     
     @test_passage.passed && @user.where(passed: true, test: tests).tests.sort_by_category_title(category_title).uniq.count == Test.sort_by_category_title(category_title).count
   end

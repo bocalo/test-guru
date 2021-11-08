@@ -58,6 +58,7 @@ en:
         category_id: "Category"
 
     page: "Back"
+    timer: "Time"
     send: "Submit"
     edit: "Edit"
     show: "Show"
@@ -88,6 +89,7 @@ en:
       title: "Title"
       level: "Level"
       questions: "Questions"
+      timer: "Time"
       actions: "Actions"
     test:
       start: "Start"
@@ -129,6 +131,7 @@ en:
         success: "Test was successfully created."
       index:
         header: "Tricky Tests"
+        timer: "Time to pass the test"
       edit:
         header: "Edit"
       new:
