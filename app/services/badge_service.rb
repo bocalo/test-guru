@@ -22,9 +22,10 @@ class BadgeService
 
   def all_tests_at_category(category_title)
     return false if @test_passage.test.category.title != category_title
-    
-    @test_passage.passed && @user.where(passed: true, test: tests).tests.sort_by_category_title(category_title).uniq.count == Test.sort_by_category_title(category_title).count
+  
+    @test_passage.passed && @user.tests.where( test_passages: {passed: true} ).sort_by_category_title(category_title).uniq.count == Test.sort_by_category_title(category_title).count
   end
+  
 
   def passed_test_at_first_attempt(*args)
     TestPassage.where(user: @test_passage.user, test: @test_passage.test).count == 1
