@@ -20,23 +20,15 @@ class TestPassagesController < ApplicationController
   # end
 
   def update
-    if @test_passage.time_left <= 0
-      @test_passage.accept!(params[:answer_ids])
-       TestsMailer.completed_test(@test_passage).deliver_now
-      
+    @test_passage.accept!(params[:answer_ids])
 
+    if @test_passage.completed?
+      TestsMailer.completed_test(@test_passage).deliver_now
+
+      BadgeService.new(@test_passage).call if @test_passage.passed?
       redirect_to result_test_passage_path(@test_passage)
     else
-      @test_passage.accept!(params[:answer_ids])
-
-      if @test_passage.completed?
-        TestsMailer.completed_test(@test_passage).deliver_now
-
-        BadgeService.new(@test_passage).call if @test_passage.passed?
-        redirect_to result_test_passage_path(@test_passage)
-      else
-        render :show
-      end
+      render :show
     end
   end
 
